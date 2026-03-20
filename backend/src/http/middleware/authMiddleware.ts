@@ -21,7 +21,7 @@ class AuthMiddleware {
 
       next();
     } catch (error) {
-      res.send({ message: getConstants().USER_NOT_FOUND });
+      res.status(401).send({ message: error.message });
     }
   }
 }

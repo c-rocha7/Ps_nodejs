@@ -1,8 +1,8 @@
 import { AppDataSource } from "./appDataSource";
 
 class DataBase {
-  public init() {
-    AppDataSource.initialize().catch((error) => console.log(error));
+  public async init() {
+    await AppDataSource.initialize();
   }
 }
 
