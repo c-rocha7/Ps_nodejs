@@ -19,4 +19,15 @@ export class FileRepository {
       userId,
     });
   }
+
+  public async moveToFolder(
+    id: number,
+    userId: number,
+    folder: string | null
+  ): Promise<File | null> {
+    const file = await this.fileRepository.findOneBy({ id, userId });
+    if (!file) return null;
+    file.folder = folder;
+    return this.fileRepository.save(file);
+  }
 }

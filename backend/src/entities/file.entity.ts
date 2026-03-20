@@ -10,4 +10,7 @@ export class File {
 
   @Column({ type: "integer" })
   userId: number;
+
+  @Column({ type: "varchar", nullable: true, default: null })
+  folder: string | null;
 }

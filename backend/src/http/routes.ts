@@ -24,6 +24,12 @@ routes.post(
   HttpExpressAdapter.execute(fileController.upload.bind(fileController))
 );
 
+routes.patch(
+  "/file/:id/folder",
+  authMiddleware.execute,
+  HttpExpressAdapter.execute(fileController.move.bind(fileController))
+);
+
 routes.get(
   "/files",
   authMiddleware.execute,
